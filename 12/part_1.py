@@ -26,7 +26,7 @@ def run_problem(test=False, testcase=0):
     rid = 0
     for l_ind, line in enumerate(topography):
         for c_ind, char in enumerate(line):
-            if any(t in value_list for value_list in regions.values()):
+            if any((l_ind, c_ind) in value_list for value_list in regions.values()):
                 print(f'({l_ind}/{c_ind}) - Position is already known')
             else:
                 print(f'({l_ind}/{c_ind}) - New region found: {char}, Region ID {rid}')
